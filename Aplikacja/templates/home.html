@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/js/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/js/owlcarousel/owl.theme.default.min.css" rel="stylesheet">
+  <link href="../static/js/animate-it/animations.css" rel="stylesheet">
+
+  <link href="../static/css/main.css" rel="stylesheet">
+  <link href="../static/css/responsive.css" rel="stylesheet">
+
+
+  <div class="jumbotron text-center">
+    <h1>Welcome To CzujPom</h1>
+    <p class="lead">This application is built on the Python Flask framework.</p>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% endif %}
+  </div>
+{% endblock %}

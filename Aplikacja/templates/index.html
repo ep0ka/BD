@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Barometer</title>
+	
+	<!-- Bootstrap Core CSS -->
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/js/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+	<link href="../static/js/owlcarousel/owl.theme.default.min.css" rel="stylesheet">
+	<link href="../static/js/animate-it/animations.css" rel="stylesheet">
+
+	<link href="../static/css/main.css" rel="stylesheet">
+	<link href="../static/css/responsive.css" rel="stylesheet">
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+
+
+
+<body class="mainpage">
+
+
+	<div class="container container-max">
+		<div class="row">
+
+			<div class="col col-lg-3 col-md-4 col-sm-6">
+				<div class="box box-general corners-border">
+					<div class="value"> Good <div class="unit">General comfort: 67%</div></div>
+					<span></span>
+					<div class="ico ico-chart">
+						<img src="../static/images/pie-chart.svg" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-3 col-md-4 col-sm-6" onClick="location.href='temperatura'">
+				<div class="box corners-border">
+					<span></span>
+					<div class="value"> {{temperatura}} <div class="unit">[ºC]</div>
+					</div> 
+					<div class="ico">
+						<img src="../static/images/ico-temp.svg" alt="" class="ico-A">
+						<img src="../static/images/ico-temp-B.svg" alt="" class="ico-B">
+					</div>
+					<div class="bar">
+						<div class="bar-label">Comfort: Average</div>
+						<div class="chart-bar chart-bar-color" style="width:40%;"></div>
+						<div class="chart-bar" style="width:60%;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-3 col-md-4 col-sm-6" onClick="location.href='wilgotnosc'">
+				<div class="box corners-border">
+					<span></span>
+					<div class="value"> {{wilgotnosc}} <div class="unit">[%]</div></div>
+					<div class="ico">
+						<img src="../static/images/ico-humidity.svg" alt="" class="ico-A">
+						<img src="../static/images/ico-humidity-B.svg" alt="" class="ico-B">
+					</div>
+					<div class="bar">
+						<div class="bar-label">Comfort: Perfect</div>
+						<div class="chart-bar chart-bar-color" style="width:95%;"></div>
+						<div class="chart-bar" style="width:5%;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-3 col-md-4 col-sm-6" onClick="location.href='swiatlo'">
+				<div class="box corners-border">
+					<span></span>
+					<div class="value"> {{swiatlo}} <div class="unit">[lx]</div></div>
+					<div class="ico">
+						<img src="../static/images/ico-light.svg" alt="" class="ico-A">
+						<img src="../static/images/ico-light-B.svg" alt="" class="ico-B">
+					</div>
+					<div class="bar">
+						<div class="bar-label">Comfort: Poor</div>
+						<div class="chart-bar chart-bar-color" style="width:30%;"></div>
+						<div class="chart-bar" style="width:70%;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-3 col-md-4 col-sm-6" onClick="location.href='cisnienie'">
+				<div class="box corners-border">
+					<span></span>
+					<div class="value"> {{cisnienie}} <div class="unit">[hPa]</div></div>
+					<div class="ico">
+						<img src="../static/images/ico-press.svg" alt="" class="ico-A">
+						<img src="../static/images/ico-press-B.svg" alt="" class="ico-B">
+					</div>
+					<div class="bar">
+						<div class="bar-label">Comfort: Good</div>
+						<div class="chart-bar chart-bar-color" style="width:65%;"></div>
+						<div class="chart-bar" style="width:35%;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-3 col-md-4 col-sm-6" onClick="location.href='halas'">
+				<div class="box corners-border">
+					<span></span>
+					<div class="value"> {{halas}} <div class="unit">[dB]</div></div>
+					<div class="ico">
+						<img src="../static/images/ico-noise.svg" alt="" class="ico-A">
+						<img src="../static/images/ico-noise-B.svg" alt="" class="ico-B">
+					</div>
+					<div class="bar">
+						<div class="bar-label">Comfort: Poor</div>
+						<div class="chart-bar chart-bar-color" style="width:25%;"></div>
+						<div class="chart-bar" style="width:75%;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-3 col-md-4 col-sm-6" onClick="location.href='smog'">
+				<div class="box corners-border critical">
+					<span></span>
+					<div class="value"> {{smog}} <div class="unit">[μg/m3]</div></div>
+					<div class="ico">
+						<img src="../static/images/ico-air.svg" alt="" class="ico-A">
+						<img src="../static/images/ico-air-B.svg" alt="" class="ico-B">
+					</div>
+					<div class="bar">
+						<div class="bar-label">Comfort: Critical</div>
+						<div class="chart-bar chart-bar-color" style="width:10%;"></div>
+						<div class="chart-bar" style="width:90%;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-lg-3 col-md-4 col-sm-6", onClick="location.href='co2'">
+				<div class="box corners-border critical">
+					<span></span>
+					<div class="value"> {{co2}} <div class="unit">[ppm]</div></div>
+					<div class="ico">
+						<img src="../static/images/ico-co2.svg" alt="" class="ico-A">
+						<img src="../static/images/ico-co2-B.svg" alt="" class="ico-B">
+					</div>
+					<div class="bar">
+						<div class="bar-label">Comfort: Critical</div>
+						<div class="chart-bar chart-bar-color" style="width:15%;"></div>
+						<div class="chart-bar" style="width:85%;"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+	<script src="../static/js/jquery.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/owlcarousel/owl.carousel.min.js"></script>
+	<script src="../static/js/animate-it/css3-animate-it.js"></script>
+
+	<script src="../static/js/main.js"></script> 
+
+
+</body>
+
+
+
+
+
+</html>
+{% endblock %}

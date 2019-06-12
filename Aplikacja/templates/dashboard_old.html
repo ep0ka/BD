@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<script>
+var totalPages = 3
+var ListaCzujnikow = session.id_i_rodzaj
+  	<#list 1..totalPages as pageNumber>
+   	<input type="button" value="${pageNumber}" onclick="goToPage(${pageNumber})" />
+  	</#list>
+
+</script>
+  	<h1><small> Welcome {{session.username}} with id {{session.id}}</small></h1>
+  	<button type="button" Onclick="window.location.href='http://localhost:5000/simple_chart'">Temperatura</button> 
+  	<button type="button">Wilgotność</button>
+
+{% endblock %}
